@@ -1,0 +1,9 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#1E1C17"/>
+  <rect x="50" y="50" width="300" height="200" rx="10" fill="#7D7461" stroke="#4B6043" stroke-width="2"/>
+  <text x="200" y="120" text-anchor="middle" fill="#EAE8E1" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Canvas</text>
+  <text x="200" y="150" text-anchor="middle" fill="#EAE8E1" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Denim</text>
+  <text x="200" y="170" text-anchor="middle" fill="#C9C5B5" font-family="Arial, sans-serif" font-size="14">Painted Jeans</text>
+  <circle cx="200" cy="200" r="20" fill="#4B6043"/>
+  <text x="200" y="205" text-anchor="middle" fill="#EAE8E1" font-family="Arial, sans-serif" font-size="12">C</text>
+</svg>
