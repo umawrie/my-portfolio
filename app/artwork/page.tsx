@@ -170,7 +170,7 @@ export default function ArtworkPage() {
       <footer className="py-8 px-6" style={{ backgroundColor: 'var(--primary)' }}>
         <div className="max-w-6xl mx-auto text-center">
           <p style={{ color: 'var(--text)' }}>
-            © 2024 Uma Mawrie. All rights reserved.
+            © 2025 Uma Mawrie. All rights reserved.
           </p>
         </div>
       </footer>
