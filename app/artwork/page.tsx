@@ -7,17 +7,6 @@ import Image from "next/image";
 const allProjects = [
   // Branding Projects
   {
-    id: "toyota",
-    title: "TOYota",
-    description: "A rebrand of Toyota car company into a toy company",
-    category: "Branding",
-    subcategory: "Rebranding",
-    year: "2022",
-    images: [
-      "/images/branding/toyota/toyota-logo.jpg",
-    ]
-  },
-  {
     id: "hacs",
     title: "HACS",
     description: "Hospitality Analytics Cloud Services - Website and Social Media Branding",
@@ -37,6 +26,17 @@ const allProjects = [
     year: "2025",
     images: [
       "/images/branding/reground/reground-logo.jpg",
+    ]
+  },
+  {
+    id: "toyota",
+    title: "TOYota",
+    description: "A rebrand of Toyota car company into a toy company",
+    category: "Branding",
+    subcategory: "Rebranding",
+    year: "2022",
+    images: [
+      "/images/branding/toyota/toyota-logo.jpg",
     ]
   },
   // Visuals Projects
