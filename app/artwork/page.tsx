@@ -43,7 +43,7 @@ const allProjects = [
   {
     id: "flower-facecards",
     title: "Flower Facecards",
-    description: "Flowers made out of 4 shapes using illustrator",
+    description: "Face cards (king, queen, jack) made from four shapes: circle, square, triangle, and original shape",
     category: "Visuals",
     subcategory: "Digital Art",
     year: "2025",

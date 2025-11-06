@@ -109,7 +109,7 @@ const projects = {
   },
   "flower-facecards": {
     title: "Flower Facecards",
-    description: "Flowers made out of 4 shapes using illustrator",
+    description: "This was a project assigned to make face cards—a king, queen, and jack—out of four shapes: a circle, square, triangle, and an original shape. The cards could be any theme, and I chose to create flower-themed face cards using Illustrator.",
     category: "Visuals",
     subcategory: "Digital Art",
     year: "2025",
@@ -257,20 +257,22 @@ export default function ProjectPage() {
               {project.title}
             </h1>
             {isFlowerFacecardsProject && 'images' in project && project.images.length > 0 ? (
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <p className="text-xl opacity-80 project-description" style={{ color: 'var(--text)' }}>
+              <>
+                <div className="flex justify-center mb-8">
+                  <div className="relative w-full max-w-2xl aspect-square">
+                    <Image
+                      src={project.images[0]}
+                      alt={`${project.title} - Cover`}
+                      fill
+                      className="object-contain rounded-lg"
+                      sizes="(max-width: 768px) 100vw, 800px"
+                    />
+                  </div>
+                </div>
+                <p className="text-xl opacity-80 max-w-3xl mx-auto text-center project-description" style={{ color: 'var(--text)' }}>
                   {project.description}
                 </p>
-                <div className="relative w-full aspect-square">
-                  <Image
-                    src={project.images[0]}
-                    alt={`${project.title} - Cover`}
-                    fill
-                    className="object-contain rounded-lg"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
-              </div>
+              </>
             ) : (
               <p className="text-xl opacity-80 max-w-3xl project-description" style={{ color: 'var(--text)' }}>
                 {project.description}
@@ -593,12 +595,51 @@ export default function ProjectPage() {
                 </div>
               ))}
             </div>
+          ) : isFlowerFacecardsProject ? (
+            /* Horizontal Scrollable Gallery for Flower Facecards */
+            <div className="relative">
+              <div className="overflow-x-auto scrollbar-hide">
+                <div className="flex space-x-6 pb-4" style={{ width: 'max-content', margin: '0 auto' }}>
+                  {'images' in project && project.images.map((imagePath, index) => {
+                    // Skip the first image (pips.png) for Flower Facecards as it's already shown above
+                    if (index === 0) return null;
+                    return (
+                      <div key={index} className="flex-shrink-0 group cursor-pointer" onClick={() => setSelectedImage(imagePath)}>
+                        <div className="relative overflow-hidden bg-gray-200 rounded-lg" style={{ width: '400px', height: '400px' }}>
+                          <Image
+                            src={imagePath}
+                            alt={`${project.title} - Image ${index}`}
+                            fill
+                            className="object-contain group-hover:scale-105 transition-transform duration-300"
+                            sizes="400px"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                              const parent = target.parentElement;
+                              if (parent) {
+                                parent.innerHTML = `
+                                  <div class="flex items-center justify-center h-full text-center p-8" style="color: var(--text); background: var(--primary);">
+                                    <div>
+                                      <div class="text-lg font-bold mb-2">Image ${index}</div>
+                                      <div class="text-sm opacity-70">Upload your image here</div>
+                                      <div class="text-xs mt-2 opacity-50">${imagePath}</div>
+                                    </div>
+                                  </div>
+                                `;
+                              }
+                            }}
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
           ) : (
             /* Regular Gallery for other projects */
             <div className="flex justify-center">
               {'images' in project && project.images.map((imagePath, index) => {
-                // Skip the first image (pips.png) for Flower Facecards as it's already shown next to description
-                if (isFlowerFacecardsProject && index === 0) return null;
                 return (
                 <div key={index} className="group cursor-pointer" onClick={() => setSelectedImage(imagePath)}>
                   <div className="relative overflow-hidden bg-gray-200" style={{ maxWidth: '800px', width: '100%' }}>
