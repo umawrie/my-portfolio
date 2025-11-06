@@ -107,6 +107,16 @@ const projects = {
       }
     }
   },
+  "flower-facecards": {
+    title: "Flower Facecards",
+    description: "Flowers made out of 4 shapes using illustrator",
+    category: "Visuals",
+    subcategory: "Digital Art",
+    year: "2025",
+    images: [
+      "/images/visuals/unboxed-placeholder.svg",
+    ]
+  },
   "voices-in-motion": {
     title: "Voices in Motion",
     description: "Photos from the women's march",

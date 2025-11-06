@@ -41,6 +41,17 @@ const allProjects = [
   },
   // Visuals Projects
   {
+    id: "flower-facecards",
+    title: "Flower Facecards",
+    description: "Flowers made out of 4 shapes using illustrator",
+    category: "Visuals",
+    subcategory: "Digital Art",
+    year: "2025",
+    images: [
+      "/images/visuals/unboxed-placeholder.svg",
+    ]
+  },
+  {
     id: "unboxed",
     title: "Unboxed",
     description: "Photo project shown through a viewmaster, commentary on women based on Pandora's box",
