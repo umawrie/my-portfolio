@@ -114,7 +114,19 @@ const projects = {
     subcategory: "Digital Art",
     year: "2025",
     images: [
-      "/images/visuals/unboxed-placeholder.svg",
+      "/images/visuals/flower-facecards/pips.png",
+      "/images/visuals/flower-facecards/facecard-1.jpg",
+      "/images/visuals/flower-facecards/facecard-2.jpg",
+      "/images/visuals/flower-facecards/facecard-3.jpg",
+      "/images/visuals/flower-facecards/facecard-4.jpg",
+      "/images/visuals/flower-facecards/facecard-5.jpg",
+      "/images/visuals/flower-facecards/facecard-6.jpg",
+      "/images/visuals/flower-facecards/facecard-7.jpg",
+      "/images/visuals/flower-facecards/facecard-8.jpg",
+      "/images/visuals/flower-facecards/facecard-9.jpg",
+      "/images/visuals/flower-facecards/facecard-10.jpg",
+      "/images/visuals/flower-facecards/facecard-11.jpg",
+      "/images/visuals/flower-facecards/facecard-12.jpg",
     ]
   },
   "voices-in-motion": {
@@ -208,6 +220,9 @@ export default function ProjectPage() {
   
   // Check if this is the Unboxed project with reels
   const isUnboxedProject = slug === 'unboxed' && 'reels' in project;
+  
+  // Check if this is the Flower Facecards project
+  const isFlowerFacecardsProject = slug === 'flower-facecards';
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--background)' }}>
@@ -241,9 +256,26 @@ export default function ProjectPage() {
             <h1 className="text-5xl md:text-7xl font-bold mt-4 mb-6" style={{ color: 'var(--text)' }}>
               {project.title}
             </h1>
-            <p className="text-xl opacity-80 max-w-3xl project-description" style={{ color: 'var(--text)' }}>
-              {project.description}
-            </p>
+            {isFlowerFacecardsProject && 'images' in project && project.images.length > 0 ? (
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <p className="text-xl opacity-80 project-description" style={{ color: 'var(--text)' }}>
+                  {project.description}
+                </p>
+                <div className="relative w-full aspect-square">
+                  <Image
+                    src={project.images[0]}
+                    alt={`${project.title} - Cover`}
+                    fill
+                    className="object-contain rounded-lg"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+              </div>
+            ) : (
+              <p className="text-xl opacity-80 max-w-3xl project-description" style={{ color: 'var(--text)' }}>
+                {project.description}
+              </p>
+            )}
           </div>
         </div>
       </section>
@@ -564,7 +596,10 @@ export default function ProjectPage() {
           ) : (
             /* Regular Gallery for other projects */
             <div className="flex justify-center">
-              {'images' in project && project.images.map((imagePath, index) => (
+              {'images' in project && project.images.map((imagePath, index) => {
+                // Skip the first image (pips.png) for Flower Facecards as it's already shown next to description
+                if (isFlowerFacecardsProject && index === 0) return null;
+                return (
                 <div key={index} className="group cursor-pointer" onClick={() => setSelectedImage(imagePath)}>
                   <div className="relative overflow-hidden bg-gray-200" style={{ maxWidth: '800px', width: '100%' }}>
                     <Image
@@ -593,7 +628,8 @@ export default function ProjectPage() {
                     />
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>

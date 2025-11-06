@@ -48,7 +48,7 @@ const allProjects = [
     subcategory: "Digital Art",
     year: "2025",
     images: [
-      "/images/visuals/unboxed-placeholder.svg",
+      "/images/visuals/flower-facecards/pips.png",
     ]
   },
   {
