@@ -41,17 +41,6 @@ const allProjects = [
   },
   // Visuals Projects
   {
-    id: "flower-facecards",
-    title: "Flower Facecards",
-    description: "Face cards (king, queen, jack) made from four shapes: circle, square, triangle, and original shape",
-    category: "Visuals",
-    subcategory: "Digital Art",
-    year: "2025",
-    images: [
-      "/images/visuals/flower-facecards/pips.png",
-    ]
-  },
-  {
     id: "unboxed",
     title: "Unboxed",
     description: "Photo project shown through a viewmaster, commentary on women based on Pandora's box",
@@ -60,6 +49,17 @@ const allProjects = [
     year: "2025",
     images: [
       "/images/visuals/unboxed/hope/hope-07.jpg",
+    ]
+  },
+  {
+    id: "flower-facecards",
+    title: "Flower Facecards",
+    description: "Face cards (king, queen, jack) made from four shapes: circle, square, triangle, and original shape",
+    category: "Visuals",
+    subcategory: "Digital Art",
+    year: "2025",
+    images: [
+      "/images/visuals/flower-facecards/pips.png",
     ]
   },
 ];
