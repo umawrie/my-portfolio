@@ -100,11 +100,11 @@ export default function ArtworkPage() {
   const brandingProjects = projectsByCategory.Branding;
 
   const nextBranding = () => {
-    setBrandingIndex((prev) => (prev + 1) % brandingProjects.length);
+    setBrandingIndex((prev) => Math.min(prev + 1, brandingProjects.length - 3));
   };
 
   const prevBranding = () => {
-    setBrandingIndex((prev) => (prev - 1 + brandingProjects.length) % brandingProjects.length);
+    setBrandingIndex((prev) => Math.max(prev - 1, 0));
   };
 
   return (
@@ -143,77 +143,81 @@ export default function ArtworkPage() {
             <h2 className="text-4xl font-bold mb-12 text-center" style={{ color: 'var(--primary)' }}>
               Branding
             </h2>
-            <div className="relative max-w-4xl mx-auto">
+            <div className="relative">
               {/* Navigation Buttons */}
-              <div className="flex justify-between items-center mb-6">
+              <div className="flex justify-end items-center mb-4 gap-4">
                 <button
                   onClick={prevBranding}
-                  className="px-6 py-3 rounded-lg font-medium transition-opacity hover:opacity-70"
+                  className="px-4 py-2 rounded-lg font-medium transition-opacity hover:opacity-70 disabled:opacity-30"
                   style={{ backgroundColor: 'var(--primary)', color: 'var(--text)' }}
                   aria-label="Previous project"
+                  disabled={brandingIndex === 0}
                 >
-                  ← Previous
+                  ←
                 </button>
-                <div className="text-sm" style={{ color: 'var(--accent)' }}>
-                  {brandingIndex + 1} / {brandingProjects.length}
-                </div>
                 <button
                   onClick={nextBranding}
-                  className="px-6 py-3 rounded-lg font-medium transition-opacity hover:opacity-70"
+                  className="px-4 py-2 rounded-lg font-medium transition-opacity hover:opacity-70 disabled:opacity-30"
                   style={{ backgroundColor: 'var(--primary)', color: 'var(--text)' }}
                   aria-label="Next project"
+                  disabled={brandingIndex >= brandingProjects.length - 3}
                 >
-                  Next →
+                  →
                 </button>
               </div>
 
-              {/* Project Display */}
-              <div className="relative">
-                {brandingProjects.map((project, index) => (
-                  <div
-                    key={project.id}
-                    className={`transition-all duration-500 ${
-                      index === brandingIndex ? 'opacity-100 block' : 'opacity-0 hidden'
-                    }`}
+              {/* Horizontal Scrollable Container */}
+              <div className="overflow-x-hidden">
+                <div className="relative">
+                  <div 
+                    className="flex gap-8 transition-transform duration-500 ease-in-out"
+                    style={{ 
+                      width: `${(brandingProjects.length / 3) * 100}%`,
+                      transform: `translateX(calc(-${brandingIndex} * (100% / 3)))`
+                    }}
                   >
-                    <Link href={`/projects/${project.id}`} className="group block">
-                      <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300" style={{ backgroundColor: 'var(--primary)' }}>
-                        <div className="aspect-square relative">
-                          {'video' in project && project.video ? (
-                            <video
-                              src={project.video}
-                              className="object-cover w-full h-full"
-                              muted
-                              loop
-                              playsInline
-                              autoPlay
-                            />
-                          ) : (
-                            <Image
-                              src={project.images[0]}
-                              alt={project.title}
-                              fill
-                              className="object-cover"
-                              sizes="(max-width: 768px) 100vw, 800px"
-                            />
-                          )}
-                        </div>
-                        <div className="p-6">
-                          <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--text)' }}>
-                            {project.title}
-                          </h3>
-                          <p className="text-sm mb-4" style={{ color: 'var(--text)' }}>
-                            {project.description}
-                          </p>
-                          <div className="flex justify-between text-xs" style={{ color: 'var(--accent)' }}>
-                            <span>{project.subcategory}</span>
-                            <span>{project.year}</span>
+                    {brandingProjects.map((project) => (
+                      <div key={project.id} className="flex-shrink-0" style={{ width: `calc(100% / ${brandingProjects.length})` }}>
+                        <Link href={`/projects/${project.id}`} className="group block">
+                          <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300" style={{ backgroundColor: 'var(--primary)' }}>
+                            <div className="aspect-square relative">
+                              {'video' in project && project.video ? (
+                                <video
+                                  src={project.video}
+                                  className="object-cover w-full h-full"
+                                  muted
+                                  loop
+                                  playsInline
+                                  autoPlay
+                                />
+                              ) : (
+                                <Image
+                                  src={project.images[0]}
+                                  alt={project.title}
+                                  fill
+                                  className="object-cover"
+                                  sizes="(max-width: 768px) 100vw, 33vw"
+                                />
+                              )}
+                            </div>
+                            <div className="p-6">
+                              <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--text)' }}>
+                                {project.title}
+                              </h3>
+                              <p className="text-sm mb-4" style={{ color: 'var(--text)' }}>
+                                {project.description}
+                              </p>
+                              <div className="flex justify-between text-xs" style={{ color: 'var(--accent)' }}>
+                                <span>{project.subcategory}</span>
+                                <span>{project.year}</span>
+                              </div>
+                            </div>
                           </div>
-                        </div>
+                        </Link>
                       </div>
-                    </Link>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           </div>
