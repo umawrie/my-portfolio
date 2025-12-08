@@ -88,9 +88,9 @@ const allProjects = [
   },
 ];
 
-// Group projects by category and limit to 3 per category
+// Group projects by category and limit to 4 per category
 const projectsByCategory = {
-  Branding: allProjects.filter(p => p.category === "Branding").slice(0, 3),
+  Branding: allProjects.filter(p => p.category === "Branding").slice(0, 4),
   Visuals: allProjects.filter(p => p.category === "Visuals").slice(0, 3),
 };
 
