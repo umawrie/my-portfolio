@@ -115,14 +115,6 @@ const projects = {
     year: "2025",
     video: "/images/visuals/nostalgia-interrupting-noise/nostalgia-interrupting-noise.mp4",
   },
-  "nostalgia-after-noise": {
-    title: "nostalgia after noise",
-    description: "A visual exploration of memory and sound",
-    category: "Visuals",
-    subcategory: "Photography",
-    year: "2025",
-    video: "/images/visuals/nostalgia-after-noise/roman.mp4",
-  },
   "flower-facecards": {
     title: "Flower Facecards",
     description: "This was a project assigned to make face cards—a king, queen, and jack—out of four shapes: a circle, square, triangle, and an original shape. The cards could be any theme, and I chose to create flower-themed face cards using Illustrator.",

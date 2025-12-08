@@ -64,18 +64,6 @@ const allProjects = [
     ]
   },
   {
-    id: "nostalgia-after-noise",
-    title: "nostalgia after noise",
-    description: "A visual exploration of memory and sound",
-    category: "Visuals",
-    subcategory: "Photography",
-    year: "2025",
-    video: "/images/visuals/nostalgia-after-noise/roman.mp4",
-    images: [
-      "/images/visuals/nostalgia-after-noise/roman.mp4",
-    ]
-  },
-  {
     id: "flower-facecards",
     title: "Flower Facecards",
     description: "Face cards (king, queen, jack) made from four shapes: circle, square, triangle, and original shape",
