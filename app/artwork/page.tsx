@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 // Project data with proper image organization
 const allProjects = [
@@ -29,17 +30,6 @@ const allProjects = [
     ]
   },
   {
-    id: "toyota",
-    title: "TOYota",
-    description: "A rebrand of Toyota car company into a toy company",
-    category: "Branding",
-    subcategory: "Rebranding",
-    year: "2022",
-    images: [
-      "/images/branding/toyota/toyota-logo.jpg",
-    ]
-  },
-  {
     id: "pierott",
     title: "Pierott - Venetian Mask",
     description: "A speculative luxury biotech brand centered on the Venetian Mask and a biomorphic skin layer",
@@ -49,6 +39,17 @@ const allProjects = [
     video: "/images/branding/pierott/Pierrot-venetian-mask.mp4",
     images: [
       "/images/branding/pierott/Pierrot-venetian-mask.mp4",
+    ]
+  },
+  {
+    id: "toyota",
+    title: "TOYota",
+    description: "A rebrand of Toyota car company into a toy company",
+    category: "Branding",
+    subcategory: "Rebranding",
+    year: "2022",
+    images: [
+      "/images/branding/toyota/toyota-logo.jpg",
     ]
   },
   // Visuals Projects
@@ -95,6 +96,17 @@ const projectsByCategory = {
 };
 
 export default function ArtworkPage() {
+  const [brandingIndex, setBrandingIndex] = useState(0);
+  const brandingProjects = projectsByCategory.Branding;
+
+  const nextBranding = () => {
+    setBrandingIndex((prev) => (prev + 1) % brandingProjects.length);
+  };
+
+  const prevBranding = () => {
+    setBrandingIndex((prev) => (prev - 1 + brandingProjects.length) % brandingProjects.length);
+  };
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--background)' }}>
       {/* Navigation */}
@@ -131,45 +143,78 @@ export default function ArtworkPage() {
             <h2 className="text-4xl font-bold mb-12 text-center" style={{ color: 'var(--primary)' }}>
               Branding
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {projectsByCategory.Branding.map((project) => (
-                <Link key={project.id} href={`/projects/${project.id}`} className="group">
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300" style={{ backgroundColor: 'var(--primary)' }}>
-                    <div className="aspect-square relative">
-                      {'video' in project && project.video ? (
-                        <video
-                          src={project.video}
-                          className="object-cover w-full h-full"
-                          muted
-                          loop
-                          playsInline
-                          autoPlay
-                        />
-                      ) : (
-                        <Image
-                          src={project.images[0]}
-                          alt={project.title}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                      )}
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--text)' }}>
-                        {project.title}
-                      </h3>
-                      <p className="text-sm mb-4" style={{ color: 'var(--text)' }}>
-                        {project.description}
-                      </p>
-                      <div className="flex justify-between text-xs" style={{ color: 'var(--accent)' }}>
-                        <span>{project.subcategory}</span>
-                        <span>{project.year}</span>
+            <div className="relative max-w-4xl mx-auto">
+              {/* Navigation Buttons */}
+              <div className="flex justify-between items-center mb-6">
+                <button
+                  onClick={prevBranding}
+                  className="px-6 py-3 rounded-lg font-medium transition-opacity hover:opacity-70"
+                  style={{ backgroundColor: 'var(--primary)', color: 'var(--text)' }}
+                  aria-label="Previous project"
+                >
+                  ← Previous
+                </button>
+                <div className="text-sm" style={{ color: 'var(--accent)' }}>
+                  {brandingIndex + 1} / {brandingProjects.length}
+                </div>
+                <button
+                  onClick={nextBranding}
+                  className="px-6 py-3 rounded-lg font-medium transition-opacity hover:opacity-70"
+                  style={{ backgroundColor: 'var(--primary)', color: 'var(--text)' }}
+                  aria-label="Next project"
+                >
+                  Next →
+                </button>
+              </div>
+
+              {/* Project Display */}
+              <div className="relative">
+                {brandingProjects.map((project, index) => (
+                  <div
+                    key={project.id}
+                    className={`transition-all duration-500 ${
+                      index === brandingIndex ? 'opacity-100 block' : 'opacity-0 hidden'
+                    }`}
+                  >
+                    <Link href={`/projects/${project.id}`} className="group block">
+                      <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300" style={{ backgroundColor: 'var(--primary)' }}>
+                        <div className="aspect-square relative">
+                          {'video' in project && project.video ? (
+                            <video
+                              src={project.video}
+                              className="object-cover w-full h-full"
+                              muted
+                              loop
+                              playsInline
+                              autoPlay
+                            />
+                          ) : (
+                            <Image
+                              src={project.images[0]}
+                              alt={project.title}
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 768px) 100vw, 800px"
+                            />
+                          )}
+                        </div>
+                        <div className="p-6">
+                          <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--text)' }}>
+                            {project.title}
+                          </h3>
+                          <p className="text-sm mb-4" style={{ color: 'var(--text)' }}>
+                            {project.description}
+                          </p>
+                          <div className="flex justify-between text-xs" style={{ color: 'var(--accent)' }}>
+                            <span>{project.subcategory}</span>
+                            <span>{project.year}</span>
+                          </div>
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   </div>
-                </Link>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 
