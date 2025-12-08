@@ -39,6 +39,18 @@ const allProjects = [
       "/images/branding/toyota/toyota-logo.jpg",
     ]
   },
+  {
+    id: "pierott",
+    title: "Pierott - Venetian Mask",
+    description: "A speculative luxury biotech brand centered on the Venetian Mask and a biomorphic skin layer",
+    category: "Branding",
+    subcategory: "Website Design",
+    year: "2025",
+    video: "/images/branding/pierott/Pierrot-venetian-mask.mp4",
+    images: [
+      "/images/branding/pierott/Pierrot-venetian-mask.mp4",
+    ]
+  },
   // Visuals Projects
   {
     id: "unboxed",
@@ -124,13 +136,24 @@ export default function ArtworkPage() {
                 <Link key={project.id} href={`/projects/${project.id}`} className="group">
                   <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300" style={{ backgroundColor: 'var(--primary)' }}>
                     <div className="aspect-square relative">
-                      <Image
-                        src={project.images[0]}
-                        alt={project.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
+                      {'video' in project && project.video ? (
+                        <video
+                          src={project.video}
+                          className="object-cover w-full h-full"
+                          muted
+                          loop
+                          playsInline
+                          autoPlay
+                        />
+                      ) : (
+                        <Image
+                          src={project.images[0]}
+                          alt={project.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                        />
+                      )}
                     </div>
                     <div className="p-6">
                       <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--text)' }}>

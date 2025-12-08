@@ -71,7 +71,7 @@ const projects = {
     category: "Branding",
     subcategory: "Website Design",
     year: "2025",
-    video: "/images/branding/pierott/pierott-walkthrough.mov",
+    video: "/images/branding/pierott/Pierrot-venetian-mask.mp4",
   },
               unboxed: {
                 title: "Unboxed",
