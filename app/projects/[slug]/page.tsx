@@ -107,6 +107,22 @@ const projects = {
       }
     }
   },
+  "nostalgia-interrupting-noise": {
+    title: "nostalgia interrupting noise",
+    description: "A collection of photos - a visual exploration of memory and sound",
+    category: "Visuals",
+    subcategory: "Photography",
+    year: "2025",
+    video: "/images/visuals/nostalgia-interrupting-noise/nostalgia-interrupting-noise.mp4",
+  },
+  "nostalgia-after-noise": {
+    title: "nostalgia after noise",
+    description: "A visual exploration of memory and sound",
+    category: "Visuals",
+    subcategory: "Photography",
+    year: "2025",
+    video: "/images/visuals/nostalgia-after-noise/roman.mp4",
+  },
   "flower-facecards": {
     title: "Flower Facecards",
     description: "This was a project assigned to make face cards—a king, queen, and jack—out of four shapes: a circle, square, triangle, and an original shape. The cards could be any theme, and I chose to create flower-themed face cards using Illustrator.",
@@ -223,6 +239,9 @@ export default function ProjectPage() {
   
   // Check if this is the Flower Facecards project
   const isFlowerFacecardsProject = slug === 'flower-facecards';
+  
+  // Check if this is a video project
+  const isVideoProject = 'video' in project;
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--background)' }}>
@@ -635,6 +654,22 @@ export default function ProjectPage() {
                   })}
                 </div>
               </div>
+            </div>
+          ) : isVideoProject ? (
+            /* Video Player for video projects */
+            <div className="flex justify-center">
+              {'video' in project && project.video && (
+                <div className="relative w-full max-w-4xl">
+                  <video
+                    src={project.video}
+                    controls
+                    className="w-full h-auto rounded-lg"
+                    style={{ backgroundColor: '#000' }}
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              )}
             </div>
           ) : (
             /* Regular Gallery for other projects */
