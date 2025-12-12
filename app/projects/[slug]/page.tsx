@@ -128,7 +128,7 @@ const projects = {
   },
   "reactive-particle-system": {
     title: "reactive particle system",
-    description: "3D particle system moved with touch screen, also using Open Sound Control and Python to trigger midi notes based off of media pipe's object detection.",
+    description: "3D particle system moved with touch screen, also using Open Sound Control and Python to trigger midi notes in ableton based off of media pipe's object detection.",
     category: "Visuals",
     subcategory: "Interactive",
     year: "2025",
