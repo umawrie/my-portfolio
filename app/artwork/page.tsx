@@ -104,7 +104,7 @@ const allProjects = [
 // Group projects by category and limit to 4 per category
 const projectsByCategory = {
   Branding: allProjects.filter(p => p.category === "Branding").slice(0, 4),
-  Visuals: allProjects.filter(p => p.category === "Visuals").slice(0, 3),
+  Visuals: allProjects.filter(p => p.category === "Visuals"),
 };
 
 export default function ArtworkPage() {
@@ -117,6 +117,17 @@ export default function ArtworkPage() {
 
   const prevBranding = () => {
     setBrandingIndex((prev) => Math.max(prev - 1, 0));
+  };
+
+  const [visualsIndex, setVisualsIndex] = useState(0);
+  const visualsProjects = projectsByCategory.Visuals;
+
+  const nextVisuals = () => {
+    setVisualsIndex((prev) => Math.min(prev + 1, visualsProjects.length - 3));
+  };
+
+  const prevVisuals = () => {
+    setVisualsIndex((prev) => Math.max(prev - 1, 0));
   };
 
   return (
@@ -239,45 +250,82 @@ export default function ArtworkPage() {
             <h2 className="text-4xl font-bold mb-12 text-center" style={{ color: 'var(--secondary)' }}>
               Visuals
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {projectsByCategory.Visuals.map((project) => (
-                <Link key={project.id} href={`/projects/${project.id}`} className="group">
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300" style={{ backgroundColor: 'var(--secondary)' }}>
-                    <div className="aspect-square relative">
-                      {'video' in project && project.video ? (
-                        <video
-                          src={project.video}
-                          className="object-cover w-full h-full"
-                          muted
-                          loop
-                          playsInline
-                          autoPlay
-                        />
-                      ) : (
-                        <Image
-                          src={project.images[0]}
-                          alt={project.title}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                      )}
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--text)' }}>
-                        {project.title}
-                      </h3>
-                      <p className="text-sm mb-4" style={{ color: 'var(--text)' }}>
-                        {project.description}
-                      </p>
-                      <div className="flex justify-between text-xs" style={{ color: 'var(--accent)' }}>
-                        <span>{project.subcategory}</span>
-                        <span>{project.year}</span>
+            <div className="relative">
+              {/* Navigation Buttons */}
+              <div className="flex justify-end items-center mb-4 gap-4">
+                <button
+                  onClick={prevVisuals}
+                  className="px-4 py-2 rounded-lg font-medium transition-opacity hover:opacity-70 disabled:opacity-30"
+                  style={{ backgroundColor: 'var(--secondary)', color: 'var(--text)' }}
+                  aria-label="Previous project"
+                  disabled={visualsIndex === 0}
+                >
+                  ←
+                </button>
+                <button
+                  onClick={nextVisuals}
+                  className="px-4 py-2 rounded-lg font-medium transition-opacity hover:opacity-70 disabled:opacity-30"
+                  style={{ backgroundColor: 'var(--secondary)', color: 'var(--text)' }}
+                  aria-label="Next project"
+                  disabled={visualsIndex >= visualsProjects.length - 3}
+                >
+                  →
+                </button>
+              </div>
+
+              {/* Horizontal Scrollable Container */}
+              <div className="overflow-x-hidden">
+                <div className="relative">
+                  <div 
+                    className="flex gap-8 transition-transform duration-500 ease-in-out"
+                    style={{ 
+                      width: `${(visualsProjects.length / 3) * 100}%`,
+                      transform: `translateX(calc(-${visualsIndex} * (100% / 3)))`
+                    }}
+                  >
+                    {visualsProjects.map((project) => (
+                      <div key={project.id} className="flex-shrink-0" style={{ width: `calc(100% / ${visualsProjects.length})` }}>
+                        <Link href={`/projects/${project.id}`} className="group block">
+                          <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300" style={{ backgroundColor: 'var(--secondary)' }}>
+                            <div className="aspect-square relative">
+                              {'video' in project && project.video ? (
+                                <video
+                                  src={project.video}
+                                  className="object-cover w-full h-full"
+                                  muted
+                                  loop
+                                  playsInline
+                                  autoPlay
+                                />
+                              ) : (
+                                <Image
+                                  src={project.images[0]}
+                                  alt={project.title}
+                                  fill
+                                  className="object-cover"
+                                  sizes="(max-width: 768px) 100vw, 33vw"
+                                />
+                              )}
+                            </div>
+                            <div className="p-6">
+                              <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--text)' }}>
+                                {project.title}
+                              </h3>
+                              <p className="text-sm mb-4" style={{ color: 'var(--text)' }}>
+                                {project.description}
+                              </p>
+                              <div className="flex justify-between text-xs" style={{ color: 'var(--accent)' }}>
+                                <span>{project.subcategory}</span>
+                                <span>{project.year}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </Link>
                       </div>
-                    </div>
+                    ))}
                   </div>
-                </Link>
-              ))}
+                </div>
+              </div>
             </div>
           </div>
 
