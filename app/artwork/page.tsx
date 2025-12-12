@@ -77,6 +77,18 @@ const allProjects = [
     ]
   },
   {
+    id: "reactive-particle-system",
+    title: "reactive particle system",
+    description: "audio and visual reactive composition made using TouchDesigner",
+    category: "Visuals",
+    subcategory: "Interactive",
+    year: "2025",
+    video: "/images/visuals/reactive-particle-system/reactive-particle-system.mp4",
+    images: [
+      "/images/visuals/reactive-particle-system/reactive-particle-system.mp4",
+    ]
+  },
+  {
     id: "flower-facecards",
     title: "Flower Facecards",
     description: "Face cards (king, queen, jack) made from four shapes: circle, square, triangle, and original shape",

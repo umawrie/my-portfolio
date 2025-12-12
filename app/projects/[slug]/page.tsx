@@ -126,6 +126,14 @@ const projects = {
     year: "2025",
     video: "/images/visuals/nostalgia-interrupting-noise/nostalgia-interrupting-noise.mp4",
   },
+  "reactive-particle-system": {
+    title: "reactive particle system",
+    description: "3D particle system moved with touch screen, also using Open Sound Control and Python to trigger midi notes based off of media pipe's object detection.",
+    category: "Visuals",
+    subcategory: "Interactive",
+    year: "2025",
+    video: "/images/visuals/reactive-particle-system/reactive-particle-system.mp4",
+  },
   "flower-facecards": {
     title: "Flower Facecards",
     description: "This was a project assigned to make face cards—a king, queen, and jack—out of four shapes: a circle, square, triangle, and an original shape. The cards could be any theme, and I chose to create flower-themed face cards using Illustrator.",
