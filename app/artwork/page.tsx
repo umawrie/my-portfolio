@@ -30,8 +30,8 @@ const allProjects = [
     ]
   },
   {
-    id: "pierott",
-    title: "Pierott - Venetian Mask",
+    id: "pierot",
+    title: "Pierot - Venetian Mask",
     description: "A speculative luxury biotech brand centered on the Venetian Mask and a biomorphic skin layer",
     category: "Branding",
     subcategory: "Website Design",

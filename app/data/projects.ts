@@ -34,8 +34,8 @@ export const allProjects: Project[] = [
     image: '/images/visuals/unboxed/hope/hope-07.jpg',
   },
   {
-    id: 'pierott',
-    title: 'Pierott - Venetian Mask',
+    id: 'pierot',
+    title: 'Pierot - Venetian Mask',
     description: 'A speculative luxury biotech brand centered on the Venetian Mask and a biomorphic skin layer that respond to constantly changing aesthetic standards.',
     shortDescription: 'Speculative design project envisioning a future where beauty is programmable through biotechnology.',
     tags: ['Interactive / Creative Tech', 'Branding'],
