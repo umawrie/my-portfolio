@@ -11,8 +11,8 @@ export default function ProjectsGrid() {
   const [selectedTag, setSelectedTag] = useState<ProjectTag | 'All'>('All');
 
   const filteredProjects = selectedTag === 'All' 
-    ? allProjects.filter(p => !p.featured)
-    : allProjects.filter(p => !p.featured && p.tags.includes(selectedTag));
+    ? allProjects
+    : allProjects.filter(p => p.tags.includes(selectedTag));
 
   return (
     <section className="py-24 px-6 bg-white">

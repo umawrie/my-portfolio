@@ -44,7 +44,7 @@ export default function FeaturedProjects() {
                   <p className="text-sm text-gray-600 mb-4 line-clamp-2">
                     {project.shortDescription}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
@@ -54,9 +54,6 @@ export default function FeaturedProjects() {
                       </span>
                     ))}
                   </div>
-                  <span className="text-sm font-medium text-red-600 group-hover:underline">
-                    View case study →
-                  </span>
                 </div>
               </div>
             </Link>

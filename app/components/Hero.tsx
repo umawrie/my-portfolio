@@ -34,14 +34,7 @@ export default function Hero() {
           Interactive and visual designer studying Integrated Design and Media at NYU
         </p>
         <p 
-          className={`text-lg md:text-xl mb-8 text-gray-700 max-w-3xl mx-auto transition-opacity duration-1000 delay-400 ${
-            mounted ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          I design calm, story-driven digital experiences — from mental health apps and data dashboards to interactive installations and photography.
-        </p>
-        <p 
-          className={`text-sm md:text-base mb-12 text-gray-500 max-w-2xl mx-auto transition-opacity duration-1000 delay-600 ${
+          className={`text-sm md:text-base mb-12 text-gray-500 max-w-2xl mx-auto transition-opacity duration-1000 delay-400 ${
             mounted ? 'opacity-100' : 'opacity-0'
           }`}
         >

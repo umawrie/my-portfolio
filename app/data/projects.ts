@@ -14,16 +14,6 @@ export interface Project {
 
 export const allProjects: Project[] = [
   {
-    id: 'reground',
-    title: 'reground.',
-    description: 'Reground is a personal project focused on helping users manage everyday anxiety through intentional interaction design. The app organizes calming practices into three groups: drawing rituals, writing rituals, and breathing exercises, each offering multiple guided activities.',
-    shortDescription: 'A mental health app designed to help users manage anxiety through calming practices and intentional interaction design.',
-    tags: ['Product / UX'],
-    year: '2025',
-    featured: true,
-    image: '/images/branding/reground/reground-logo.jpg',
-  },
-  {
     id: 'hacs',
     title: 'HACS Dashboard & Branding',
     description: 'During my summer internship with a tech start-up focused on helping hotels improve the way they access and interpret their data, I had the opportunity to learn extensively about the hospitality industry and its relationship with technology.',
@@ -50,9 +40,19 @@ export const allProjects: Project[] = [
     shortDescription: 'Speculative design project envisioning a future where beauty is programmable through biotechnology.',
     tags: ['Interactive / Creative Tech', 'Branding'],
     year: '2025',
-    featured: false,
+    featured: true,
     image: '/images/branding/pierott/Pierrot-venetian-mask.mp4',
     video: '/images/branding/pierott/Pierrot-venetian-mask.mp4',
+  },
+  {
+    id: 'reground',
+    title: 'reground.',
+    description: 'Reground is a personal project focused on helping users manage everyday anxiety through intentional interaction design. The app organizes calming practices into three groups: drawing rituals, writing rituals, and breathing exercises, each offering multiple guided activities.',
+    shortDescription: 'A mental health app designed to help users manage anxiety through calming practices and intentional interaction design.',
+    tags: ['Product / UX'],
+    year: '2025',
+    featured: false,
+    image: '/images/branding/reground/reground-logo.jpg',
   },
   {
     id: 'reactive-particle-system',

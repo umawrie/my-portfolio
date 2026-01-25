@@ -35,15 +35,38 @@ export default function AboutPage() {
           <h1 className="text-5xl md:text-7xl font-bold mb-8 text-black">
             About Me
           </h1>
-          <p className="text-xl text-gray-700">
-            Hi! I am currently a design student exploring my wide range of interests. Based in New York City, I work with graphic design, web design, fashion, and installation art, while also continuing to explore and develop my creative side.
-          </p>
         </div>
       </section>
 
       {/* About Content */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto">
+          <div className="prose prose-lg max-w-none mb-16">
+            <p className="text-lg text-gray-700 mb-6">
+              I'm an Integrated Design and Media student at NYU Tandon, passionate about creating 
+              thoughtful digital experiences that blend functionality with emotional resonance. My work 
+              spans product design, UX, interactive installations, and visual storytelling.
+            </p>
+            <p className="text-lg text-gray-700 mb-8">
+              I'm particularly drawn to projects that address mental health, data visualization, and 
+              narrative-driven design. Whether designing a calming anxiety app or visualizing complex 
+              datasets, I aim to create interfaces that feel intuitive, meaningful, and human-centered.
+            </p>
+            <div className="mb-6">
+              <h3 className="text-xl font-semibold mb-4 text-black">Tools & Skills</h3>
+              <div className="flex flex-wrap gap-3">
+                {['Figma', 'Adobe Creative Suite', 'React', 'Next.js', 'TouchDesigner', 'Python', 'Illustrator', 'Photoshop'].map((tool) => (
+                  <span
+                    key={tool}
+                    className="px-3 py-1 bg-white border border-gray-200 text-sm text-gray-700 rounded"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {/* Education */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-8 text-center text-black">
@@ -91,7 +114,7 @@ export default function AboutPage() {
             </div>
             <div className="flex gap-6">
               <a
-                href="mailto:umamawrie@gmail.com"
+                href="mailto:urm2003@nyu.edu"
                 className="text-sm text-gray-400 hover:text-white transition-colors"
               >
                 Email
