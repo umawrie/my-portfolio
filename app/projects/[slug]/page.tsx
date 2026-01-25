@@ -228,10 +228,10 @@ export default function ProjectPage() {
 
   if (!project) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: 'var(--background)' }}>
+      <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4" style={{ color: 'var(--text)' }}>Project Not Found</h1>
-          <Link href="/artwork" className="text-lg" style={{ color: 'var(--accent)' }}>
+          <h1 className="text-4xl font-bold mb-4 text-black">Project Not Found</h1>
+          <Link href="/#work" className="text-lg text-red-600 hover:underline">
             ← Back to Work
           </Link>
         </div>
@@ -255,23 +255,30 @@ export default function ProjectPage() {
   const isVideoProject = 'video' in project;
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: 'var(--background)' }}>
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4" style={{ backgroundColor: 'var(--background)', borderBottom: '1px solid var(--accent)' }}>
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <Link href="/artwork" className="text-lg font-medium hover:opacity-70 transition-opacity" style={{ color: 'var(--text)' }}>
-            ← Back to Work
-          </Link>
-          <div className="flex space-x-8">
-            <Link href="/" className="text-lg font-medium hover:opacity-70 transition-opacity" style={{ color: 'var(--text)' }}>
-              Home
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="flex justify-between items-center">
+            <Link href="/#work" className="text-sm font-medium text-black hover:text-red-600 transition-colors">
+              ← Back to Work
             </Link>
-            <Link href="/artwork" className="text-lg font-medium hover:opacity-70 transition-opacity" style={{ color: 'var(--text)' }}>
-              Work
-            </Link>
-            <Link href="/about" className="text-lg font-medium hover:opacity-70 transition-opacity" style={{ color: 'var(--text)' }}>
-              About
-            </Link>
+            <div className="flex space-x-8">
+              <Link href="/#work" className="text-sm font-medium text-black hover:text-red-600 transition-colors">
+                Work
+              </Link>
+              <Link href="/about" className="text-sm font-medium text-black hover:text-red-600 transition-colors">
+                About
+              </Link>
+              <a 
+                href="/resume.pdf" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-black hover:text-red-600 transition-colors"
+              >
+                Resume
+              </a>
+            </div>
           </div>
         </div>
       </nav>
@@ -280,10 +287,10 @@ export default function ProjectPage() {
       <section className="pt-24 pb-16 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
-            <span className="text-sm font-medium" style={{ color: 'var(--accent)' }}>
+            <span className="text-sm font-medium text-gray-500">
               {project.category} • {project.subcategory} • {project.year}
             </span>
-            <h1 className="text-5xl md:text-7xl font-bold mt-4 mb-6" style={{ color: 'var(--text)' }}>
+            <h1 className="text-5xl md:text-7xl font-bold mt-4 mb-6 text-black">
               {project.title}
             </h1>
             {isFlowerFacecardsProject && 'images' in project && project.images.length > 0 ? (
@@ -299,12 +306,12 @@ export default function ProjectPage() {
                     />
                   </div>
                 </div>
-                <p className="text-xl opacity-80 max-w-3xl mx-auto text-center project-description" style={{ color: 'var(--text)' }}>
+                <p className="text-xl text-gray-700 max-w-3xl mx-auto text-center project-description">
                   {project.description}
                 </p>
               </>
             ) : (
-              <p className="text-xl opacity-80 max-w-3xl project-description" style={{ color: 'var(--text)' }}>
+              <p className="text-xl text-gray-700 max-w-3xl project-description">
                 {project.description}
               </p>
             )}
@@ -319,7 +326,7 @@ export default function ProjectPage() {
             <>
               {/* Website Design Section */}
               <div className="mb-20">
-                <h3 className="text-3xl font-bold mb-8 text-center" style={{ color: 'var(--text)' }}>
+                <h3 className="text-3xl font-bold mb-8 text-center text-black">
                   Website Design
                 </h3>
                 <div className="relative">
@@ -361,7 +368,7 @@ export default function ProjectPage() {
 
               {/* Social Media Section */}
               <div className="mb-20">
-                <h3 className="text-3xl font-bold mb-8 text-center" style={{ color: 'var(--text)' }}>
+                <h3 className="text-3xl font-bold mb-8 text-center text-black">
                   Social Media
                 </h3>
                 <div className="relative">
@@ -444,7 +451,7 @@ export default function ProjectPage() {
             <div className="space-y-20">
               {Object.entries(project.reels).map(([reelKey, reel]) => (
                 <div key={reelKey} className="text-center">
-                  <h3 className="text-3xl font-bold mb-12" style={{ color: 'var(--text)' }}>
+                  <h3 className="text-3xl font-bold mb-12 text-black">
                     {reel.title}
                   </h3>
                   
@@ -810,11 +817,31 @@ export default function ProjectPage() {
       )}
 
       {/* Footer */}
-      <footer className="py-8 px-6" style={{ backgroundColor: 'var(--primary)' }}>
-        <div className="max-w-6xl mx-auto text-center">
-          <p style={{ color: 'var(--text)' }}>
-            © 2025 Uma Mawrie. All rights reserved.
-          </p>
+      <footer className="py-12 px-6 bg-black text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+              <p className="text-sm text-gray-400">
+                © 2025 Uma Mawrie. All rights reserved.
+              </p>
+            </div>
+            <div className="flex gap-6">
+              <a
+                href="mailto:urm2003@nyu.edu"
+                className="text-sm text-gray-400 hover:text-white transition-colors"
+              >
+                Email
+              </a>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-gray-400 hover:text-white transition-colors"
+              >
+                Resume
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Orbitron } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const orbitron = Orbitron({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-orbitron",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
   title: "Uma Mawrie - Portfolio",
-  description: "Creative portfolio showcasing branding, visuals, and fashion work",
+  description: "Interactive and visual designer studying Integrated Design and Media at NYU",
 };
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${orbitron.variable} font-orbitron`}>
+      <body className={`${inter.variable} font-sans`}>
         {children}
       </body>
     </html>

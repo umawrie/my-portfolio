@@ -16,7 +16,7 @@ const config: Config = {
         text: "var(--text)",
       },
       fontFamily: {
-        orbitron: ["var(--font-orbitron)", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
     },
   },
