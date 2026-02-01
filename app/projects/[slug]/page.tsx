@@ -9,7 +9,11 @@ import { useState } from "react";
 const projects = {
   toyota: {
     title: "TOYota",
-    description: "During my summer course at Parsons, I completed a rebranding project that challenged us to transform an existing company into a completely new concept. I selected Toyota and reimagined the well-known car manufacturer as a toy company. The project involved conducting market research, analyzing target audiences, and comparing branding strategies across industries. As part of the rebrand, I designed a cohesive line of products, including bags, toy boxes, stickers, and a cup, each reflecting the playful and imaginative spirit of the new brand identity.",
+    description: `Project at a Glance
+Type: Branding exercise
+
+Overview
+A playful rebranding concept that reimagines automotive identity through toy-like aesthetics.`,
     category: "Branding",
     subcategory: "Rebranding",
     year: "2022",
@@ -74,7 +78,28 @@ This project taught me how to translate technical data into interfaces that supp
   },
   reground: {
     title: "reground.",
-    description: "Reground is a personal project focused on helping users manage everyday anxiety through intentional interaction design. The app organizes calming practices into three groups: drawing rituals, writing rituals, and breathing exercises, each offering multiple guided activities. The goal is to create a simple and intuitive space where users can slow down, reflect, and regain a sense of control.\n\nThe interface uses soft motion, minimal color palettes, and responsive feedback to make the experience feel personal and grounded. While the feature for personalized feedback is still in progress, the current design emphasizes accessibility, mindful pacing, and emotional connection through visual and interactive design choices.",
+    description: `Project at a Glance
+Type: Mental health app concept
+Role: UX/UI design
+Tools: Figma
+Focus: Anxiety relief through ritual
+
+Overview
+Reground is a mental health app concept focused on reducing anxiety through calm, repeatable rituals.
+
+Problem
+Many wellness apps rely on gamification, tracking, and notifications, which can increase stress rather than reduce it.
+
+Approach
+Designed three ritual types: breathing, drawing, and writing
+Used minimal UI, soft pacing, and limited text
+Avoided streaks, scores, or productivity language
+
+Outcome
+A conceptual app prototype focused on quiet, non-judgmental interaction.
+
+Reflection
+This project helped me think critically about how interface design can shape emotional experience.`,
     category: "Branding",
     subcategory: "App Design",
     year: "2025",
@@ -90,8 +115,32 @@ This project taught me how to translate technical data into interfaces that supp
     ]
   },
   pierot: {
-    title: "Pierot - Venetian Mask",
-    description: "For this project, we were asked to imagine a future at least twenty years ahead and send a message back to the present. With my two partners, I envisioned a world set in the 2070s where beauty is fully programmable, always shifting and adapting as quickly as trends move today.\n\nWe created Pierot, a speculative luxury biotech brand centered on the Venetian Mask and a biomorphic skin layer that respond to constantly changing aesthetic standards. The concept draws from the pace of fast fashion and the pressure to continually update one's appearance, offering a future that feels both aspirational and slightly uneasy in its constant motion.\n\nInfluenced by how social media already shapes beauty ideals, Pierot imagines a time when platforms help introduce new looks and guide what becomes desirable, creating a cycle of continuous reinvention.\n\nHere is a video walkthrough of my website design for the project, built in React. The site functions as a luxury service platform where users can learn more about Pierot's biotechnology and book consultations for its treatments. It presents the brand as both an elevated beauty experience and a reflection on the fast, ever evolving nature of trend driven identity.",
+    title: "Pierot — Venetian Mask",
+    description: `Project at a Glance
+Type: Speculative brand + web experience
+Role: Concept, visual identity, website design
+Context: IDM Future Artifact project
+Timeline: Spring 2025 (2073 scenario)
+Tools: React, Canva, Illustrator
+Themes: Beauty standards, biotech, image culture
+
+Overview
+Pierot is a speculative luxury biotech brand set in 2073, where cosmetic modification is packaged as customizable facial "masks."
+
+Question
+What happens when beauty standards, biotechnology, and digital identity fully merge?
+
+Approach
+Developed a future cultural context and brand narrative
+Designed a clinical yet aspirational visual identity
+Built a website that educates users and simulates booking consultations
+Framed the product as both a beauty object and a status symbol
+
+Outcome
+A speculative brand system and website that explores how technology might reshape self-image and desire.
+
+Reflection
+This project allowed me to combine worldbuilding, brand strategy, and interface design to critique contemporary beauty culture in a group setting.`,
     category: "Branding",
     subcategory: "Website Design",
     year: "2025",
@@ -99,7 +148,29 @@ This project taught me how to translate technical data into interfaces that supp
   },
               unboxed: {
                 title: "Unboxed",
-                description: "While walking through a small vintage store at the Jersey Shore, I found an old View Master tucked between stacks of postcards and seashells. When I held it up to the light, I felt a quiet sense of nostalgia, as if I was peering into someone else's memories. That small moment sparked this project and reminded me how objects can carry emotion and story.\n\nInspired by the 1929 silent film Pandora's Box, this work explores how women are seen, judged, and redefined through images. I created three photographic reels titled The Gaze, The Blame, and The Hope, each capturing a different emotional perspective on perception, blame, and resilience.\n\nThe piece is presented through the same View Master I found that day. Its stereoscopic design creates a small and focused world for each image, inviting viewers to look closely and reflect on their own act of seeing. Every photograph was taken and composed to convey layers of meaning through light, framing, and symbolism. In making this work, I often thought about the women in my life, especially my mother, sister, and friends, whose strength and tenderness have shaped who I am. This project became a love letter to them, to their stories, and to the sense of community and connection they have given me. Unboxed will be exhibited at the NYU Library from October to December 2025 and invites viewers to reflect on how the image of women continues to evolve in both art and everyday life.",
+                description: `Project at a Glance
+Type: Photography installation
+Role: Photography, sequencing, installation design
+Context: IDM studio project
+Exhibition: NYU Library (Oct–Dec 2025)
+Themes: The gaze, blame, resilience, femininity
+
+Overview
+Unboxed is a photography installation inspired by the 1929 silent film Pandora's Box that examines how women are seen, judged, and redefined through images in society.
+
+Concept
+Drawing from the myth of Pandora and its cinematic interpretation, the project explores how women are often positioned as objects of fascination while simultaneously being blamed for the narratives imposed on them.
+
+Approach
+Created three photographic reels titled The Gaze, The Blame, and The Hope
+Used a vintage View-Master to create an intimate, focused viewing experience
+Composed each image using light, framing, and symbolism to suggest layered meaning
+
+Outcome
+A physical installation that slows down image consumption and encourages viewers to reflect on their own act of seeing.
+
+Reflection
+This project was shaped by the women in my life and serves as a meditation on how representations of women continue to evolve across art and everyday visual culture.`,
     category: "Visuals",
     subcategory: "Photography",
     year: "2025",
@@ -144,7 +215,16 @@ This project taught me how to translate technical data into interfaces that supp
   },
   "nostalgia-interrupting-noise": {
     title: "nostalgia interrupting noise",
-    description: "A collection of photos - a visual exploration of memory and sound",
+    description: `Project at a Glance
+Type: Photography series
+Role: Photography, editing
+Themes: Childhood, identity, memory
+
+Overview
+A photographic series exploring moments of childhood nostalgia interrupted by visual noise.
+
+Reflection
+This work reflects my ongoing interest in memory and how images fragment over time.`,
     category: "Visuals",
     subcategory: "Photography",
     year: "2025",
@@ -152,7 +232,24 @@ This project taught me how to translate technical data into interfaces that supp
   },
   "reactive-particle-system": {
     title: "reactive particle system",
-    description: "3D particle system moved with touch screen, also using Open Sound Control and Python to trigger midi notes in ableton based off of media pipe's object detection.",
+    description: `Project at a Glance
+Type: Interactive audiovisual system
+Role: Interaction design, creative coding
+Tools: MediaPipe, OSC, Python, Ableton, TouchDesigner
+
+Overview
+An interactive system that generates music and visuals based on how many people or objects it detects.
+
+Approach
+Used MediaPipe for object detection
+Sent data via OSC to trigger MIDI notes
+Connected visuals and sound through a shared data stream
+
+Outcome
+A responsive audiovisual environment where motion directly affects harmony and visuals.
+
+Reflection
+This project deepened my interest in systems that connect sound, visuals, and human presence.`,
     category: "Visuals",
     subcategory: "Interactive",
     year: "2025",
@@ -160,7 +257,11 @@ This project taught me how to translate technical data into interfaces that supp
   },
   "flower-facecards": {
     title: "Flower Facecards",
-    description: "This was a project assigned to make face cards—a king, queen, and jack—out of four shapes: a circle, square, triangle, and an original shape. The cards could be any theme, and I chose to create flower-themed face cards using Illustrator.",
+    description: `Project at a Glance
+Type: Illustration / branding
+
+Overview
+A set of illustrated face cards combining portraiture with botanical forms.`,
     category: "Visuals",
     subcategory: "Digital Art",
     year: "2025",
