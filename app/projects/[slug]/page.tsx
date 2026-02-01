@@ -5,6 +5,44 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 
+// Function to format description with bold headers
+function formatDescription(text: string) {
+  const headers = [
+    'Project at a Glance',
+    'Overview',
+    'Problem',
+    'Question',
+    'Concept',
+    'Approach',
+    'Outcome',
+    'Reflection'
+  ];
+  
+  // Split by lines and process
+  return text.split('\n').map((line, index) => {
+    const trimmedLine = line.trim();
+    
+    // Check if this line is a section header
+    const isHeader = headers.some(header => trimmedLine === header);
+    
+    if (isHeader) {
+      return (
+        <span key={index}>
+          <strong className="font-bold text-black">{trimmedLine}</strong>
+          <br />
+        </span>
+      );
+    }
+    
+    return (
+      <span key={index}>
+        {line}
+        <br />
+      </span>
+    );
+  });
+}
+
 // Project data
 const projects = {
   toyota: {
@@ -431,14 +469,14 @@ export default function ProjectPage() {
                     />
                   </div>
                 </div>
-                <p className="text-xl text-gray-700 max-w-3xl mx-auto text-center project-description">
-                  {project.description}
-                </p>
+                <div className="text-xl text-gray-700 max-w-3xl mx-auto text-center project-description">
+                  {formatDescription(project.description)}
+                </div>
               </>
             ) : (
-              <p className="text-xl text-gray-700 max-w-3xl project-description">
-                {project.description}
-              </p>
+              <div className="text-xl text-gray-700 max-w-3xl project-description">
+                {formatDescription(project.description)}
+              </div>
             )}
           </div>
         </div>
