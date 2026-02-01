@@ -31,7 +31,7 @@ export const allProjects: Project[] = [
     tags: ['Photography'],
     year: '2025',
     featured: true,
-    image: '/images/visuals/unboxed/the-gaze/the-gaze-07.jpg',
+    image: '/images/visuals/unboxed/the-blame/the-blame-07.jpg',
   },
   {
     id: 'pierot',
