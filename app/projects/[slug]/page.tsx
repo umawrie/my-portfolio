@@ -18,8 +18,32 @@ const projects = {
     ]
   },
               hacs: {
-                title: "HACS",
-                description: "During my summer internship with a tech start-up focused on helping hotels improve the way they access and interpret their data, I had the opportunity to learn extensively about the hospitality industry and its relationship with technology. As part of the internship, our team of interns was assigned to design a mock website aimed at hotel clients. I developed the front-end interface, which included a clean and intuitive dashboard for quick data insights, as well as organized tabs displaying graphs and analytics for deeper exploration. Alongside the website project, we were also responsible for managing the company's social media presence. I created the start-up's first post to introduce its mission and visual identity, contributing to its initial brand direction. This experience strengthened my understanding of user-centered design, data visualization, and how thoughtful branding can bridge technology with real-world industry needs.",
+                title: "HACS — Dashboard & Branding",
+                description: `Project at a Glance
+Type: Product dashboard + brand design
+Role: Product design, UI layout, branding
+Context: Internship at HACS AI
+Timeline: Summer 2025
+Tools: React, Canva
+Focus: Data clarity for non-technical users
+
+Overview
+HACS is a hospitality analytics platform designed to help hotel teams understand demand, pricing, and performance data. During my internship, I worked on the dashboard layout and brand visuals to make complex metrics feel more approachable.
+
+Problem
+Hospitality analytics tools often overwhelm users with dense data and technical language, making insights harder to act on.
+
+Approach
+Identified the most important metrics to surface first
+Designed a clean dashboard layout with clear hierarchy
+Used friendly language and visual grouping to reduce cognitive load
+Created branded social assets to communicate product value
+
+Outcome
+A dashboard design and visual identity that clearly communicates HACS's value to potential partners and clients.
+
+Reflection
+This project taught me how to translate technical data into interfaces that support real-world decision making.`,
     category: "Branding",
     subcategory: "Digital Branding",
     year: "2025",

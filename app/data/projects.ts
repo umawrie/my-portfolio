@@ -16,7 +16,7 @@ export const allProjects: Project[] = [
   {
     id: 'hacs',
     title: 'HACS Dashboard & Branding',
-    description: 'During my summer internship with a tech start-up focused on helping hotels improve the way they access and interpret their data, I had the opportunity to learn extensively about the hospitality industry and its relationship with technology.',
+    description: 'Dashboard and branding design for a hospitality analytics platform, featuring data visualization and social media content.',
     shortDescription: 'Dashboard and branding design for a hospitality analytics platform, featuring data visualization and social media content.',
     tags: ['Product / UX', 'Branding'],
     year: '2025',
