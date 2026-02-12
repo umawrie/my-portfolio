@@ -52,7 +52,7 @@ export const allProjects: Project[] = [
     tags: ['Product / UX'],
     year: '2025',
     featured: false,
-    image: '/images/branding/reground/reground-logo.jpg',
+    image: '/regroundreallogo.jpeg',
   },
   {
     id: 'reactive-particle-system',
