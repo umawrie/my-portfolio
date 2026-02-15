@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -19,6 +20,19 @@ export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center px-6 pt-20">
       <div className="max-w-4xl mx-auto text-center">
+        <div className={`mb-8 transition-opacity duration-1000 ${
+          mounted ? 'opacity-100' : 'opacity-0'
+        }`}>
+          <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto rounded-full overflow-hidden">
+            <Image
+              src="/og-image.jpg"
+              alt="Uma Mawrie"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 192px, 256px"
+            />
+          </div>
+        </div>
         <h1 
           className={`text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-black transition-opacity duration-1000 ${
             mounted ? 'opacity-100' : 'opacity-0'

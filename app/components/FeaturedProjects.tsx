@@ -19,14 +19,23 @@ export default function FeaturedProjects() {
               <div className="bg-white border border-gray-200 hover:border-red-600 transition-colors overflow-hidden">
                 <div className="aspect-[4/3] relative bg-gray-100">
                   {project.video ? (
-                    <video
-                      src={project.video.replace(/ /g, '%20')}
-                      className="object-cover w-full h-full"
-                      muted
-                      loop
-                      playsInline
-                      autoPlay
-                    />
+                    <>
+                      <video
+                        src={project.video.replace(/ /g, '%20')}
+                        className="object-cover w-full h-full"
+                        muted
+                        loop
+                        playsInline
+                        autoPlay
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white bg-opacity-80 flex items-center justify-center">
+                          <svg className="w-6 h-6 md:w-8 md:h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                          </svg>
+                        </div>
+                      </div>
+                    </>
                   ) : (
                     <Image
                       src={project.image}
