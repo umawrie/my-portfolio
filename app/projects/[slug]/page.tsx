@@ -266,7 +266,7 @@ This work reflects my ongoing interest in memory and how images fragment over ti
     category: "Visuals",
     subcategory: "Photography",
     year: "2025",
-    video: "/images/visuals/nostalgia-interrupting-noise/nostalgia-interrupting-noise.mp4",
+    video: "/images/visuals/nostalgia-interrupting-noise/nostalgia-interrupting noise.mp4",
   },
   "reactive-particle-system": {
     title: "reactive particle system",
@@ -842,7 +842,7 @@ export default function ProjectPage() {
               {'video' in project && project.video && (
                 <div className="relative w-full max-w-4xl">
                   <video
-                    src={project.video}
+                    src={project.video.replace(/ /g, '%20')}
                     controls
                     className="w-full h-auto rounded-lg"
                     style={{ backgroundColor: '#000' }}

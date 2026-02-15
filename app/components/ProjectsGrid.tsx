@@ -59,7 +59,7 @@ export default function ProjectsGrid() {
                   <div className="aspect-[4/3] relative bg-gray-100">
                     {project.video ? (
                       <video
-                        src={project.video}
+                        src={project.video.replace(/ /g, '%20')}
                         className="object-cover w-full h-full"
                         muted
                         loop

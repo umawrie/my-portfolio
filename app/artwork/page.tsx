@@ -71,9 +71,9 @@ const allProjects = [
     category: "Visuals",
     subcategory: "Photography",
     year: "2025",
-    video: "/images/visuals/nostalgia-interrupting-noise/nostalgia-interrupting-noise.mp4",
+    video: "/images/visuals/nostalgia-interrupting-noise/nostalgia-interrupting noise.mp4",
     images: [
-      "/images/visuals/nostalgia-interrupting-noise/nostalgia-interrupting-noise.mp4",
+      "/images/visuals/nostalgia-interrupting-noise/nostalgia-interrupting noise.mp4",
     ]
   },
   {
@@ -206,7 +206,7 @@ export default function ArtworkPage() {
                             <div className="aspect-square relative">
                               {'video' in project && project.video ? (
                                 <video
-                                  src={project.video}
+                                  src={project.video.replace(/ /g, '%20')}
                                   className="object-cover w-full h-full"
                                   muted
                                   loop
@@ -290,7 +290,7 @@ export default function ArtworkPage() {
                             <div className="aspect-square relative">
                               {'video' in project && project.video ? (
                                 <video
-                                  src={project.video}
+                                  src={project.video.replace(/ /g, '%20')}
                                   className="object-cover w-full h-full"
                                   muted
                                   loop
