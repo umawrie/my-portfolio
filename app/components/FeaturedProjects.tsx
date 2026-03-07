@@ -27,6 +27,7 @@ export default function FeaturedProjects() {
                         loop
                         playsInline
                         autoPlay
+                        preload="metadata"
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white bg-opacity-80 flex items-center justify-center">

@@ -66,14 +66,6 @@ export default function Hero() {
             View selected work
           </button>
           <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 border-2 border-black text-black font-medium hover:bg-black hover:text-white transition-colors text-center"
-          >
-            Download resume
-          </a>
-          <a
             href="mailto:urm2003@nyu.edu"
             className="px-8 py-3 border-2 border-red-600 text-red-600 font-medium hover:bg-red-600 hover:text-white transition-colors text-center"
           >

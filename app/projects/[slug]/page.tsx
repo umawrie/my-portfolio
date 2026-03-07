@@ -433,14 +433,6 @@ export default function ProjectPage() {
               <Link href="/about" className="text-sm font-medium text-black hover:text-red-600 transition-colors">
                 About
               </Link>
-              <a 
-                href="/resume.pdf" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-medium text-black hover:text-red-600 transition-colors"
-              >
-                Resume
-              </a>
             </div>
           </div>
         </div>
@@ -994,14 +986,6 @@ export default function ProjectPage() {
                 className="text-sm text-gray-400 hover:text-white transition-colors"
               >
                 Email
-              </a>
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-gray-400 hover:text-white transition-colors"
-              >
-                Resume
               </a>
             </div>
           </div>

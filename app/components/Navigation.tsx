@@ -20,14 +20,6 @@ export default function Navigation() {
             >
               About
             </Link>
-            <a 
-              href="/resume.pdf" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-black hover:text-red-600 transition-colors"
-            >
-              Resume
-            </a>
           </div>
         </div>
       </div>

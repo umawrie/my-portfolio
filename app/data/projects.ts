@@ -31,7 +31,7 @@ export const allProjects: Project[] = [
     tags: ['Photography'],
     year: '2025',
     featured: true,
-    image: '/images/visuals/unboxed/the-blame/the-blame-07.jpg',
+    image: '/images/visuals/unboxed/hope/hope-06.jpg',
   },
   {
     id: 'pierot',
@@ -73,8 +73,8 @@ export const allProjects: Project[] = [
     tags: ['Photography'],
     year: '2025',
     featured: false,
-    image: '/images/visuals/nostalgia-interrupting-noise/nostalgia-interrupting-noise.mp4',
-    video: '/images/visuals/nostalgia-interrupting-noise/nostalgia-interrupting-noise.mp4',
+    image: '/images/visuals/nostalgia-interrupting-noise/nostalgia-interrupting noise.mp4',
+    video: '/images/visuals/nostalgia-interrupting-noise/nostalgia-interrupting noise.mp4',
   },
   {
     id: 'flower-facecards',
